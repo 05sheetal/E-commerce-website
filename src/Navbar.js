@@ -2,6 +2,13 @@ import { NavLink, Route, Routes } from 'react-router-dom'
 import { ReactComponent as Brand } from './logo.svg'
 import './navbar.css'
 import Home from './Home'
+import Jewellery from './Jewellery'
+import Electronics from './Electronics'
+import Mencloth from './Mencloth'
+import Womencloth from './Womencloth'
+import Item from './Item'
+
+
 
 const Navbar = () => {
   return (
@@ -16,16 +23,16 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to="/blog">jewllery</NavLink>
+              <NavLink to="/Jewellery">Jewellery</NavLink>
             </li>
             <li>
-              <NavLink to="/projects">Electronics</NavLink>
+              <NavLink to="/Electronics">Electronics</NavLink>
             </li>
             <li>
-              <NavLink to="/about">men cloth</NavLink>
+              <NavLink to="/Mencloth">Men cloth</NavLink>
             </li>
             <li>
-              <NavLink to="/contact">women cloth</NavLink>
+              <NavLink to="/Womencloth">women cloth</NavLink>
             </li>
           </ul>
         </div>
@@ -33,6 +40,11 @@ const Navbar = () => {
       
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/Jewellery' element={<Jewellery></Jewellery>}></Route>
+        <Route path='/Electronics' element={<Electronics></Electronics>}></Route>
+        <Route path='/Mencloth' element={<Mencloth></Mencloth>}></Route>
+        <Route path='/Womencloth' element={<Womencloth></Womencloth>}></Route>
+        <Route path='/Item' element={<Item></Item>}></Route>
       </Routes>
     </nav>
   )

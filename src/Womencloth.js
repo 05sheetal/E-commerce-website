@@ -1,5 +1,4 @@
 import { useEffect,useState } from "react"
-import {useNavigate} from "react-router-dom"
 import {
     MDBCard,
     MDBCardImage,
@@ -12,24 +11,15 @@ import {
   } from 'mdb-react-ui-kit';
 import Footer from "./Footer";
 
-function Home()
+function Womencloth()
 {
     const [apidata,setdata]=useState([])
-    const navigate=useNavigate()
     useEffect(()=>{
         getData()
     },[])
-    
-    function getId(pid)
-    {
-      const data={pid:pid}
-      navigate("/item",{state:data})
-      console.log(pid)
-      
-    }
     async function getData()
     {
-        var result=await fetch("https://fakestoreapi.com/products")
+        var result=await fetch("https://fakestoreapi.com/products/category/women's%20clothing")
         
         // console.log(result)
         var data=await result.json()
@@ -61,7 +51,7 @@ function Home()
             {item.description}
               
             </MDBCardText>
-            <center><MDBBtn onClick={()=>getId(item.id)} >view</MDBBtn></center>
+            <MDBBtn >view</MDBBtn>
           </MDBCardBody>
         </MDBCard>
       </MDBCol>
@@ -73,4 +63,4 @@ function Home()
     </div>)
     
 }
-export default Home
+export default Womencloth
